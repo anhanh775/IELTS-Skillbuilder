@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IELTS Short Writing Practice</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Lexend:wght@400;500&display=swap">
+<style>
+:root{--bg:#f1f3f9;--ink:#1d2236;--mut:#586079;--card:#fff;--line:#d8dcee;--acc:#3a49c8;--on:#fff;--ok:#0b7d68;--okbg:#dff5ee;--bad:#b8344a;--badbg:#fde5e9;--hl:#fff1b8;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12141f;--ink:#e8eaf6;--mut:#9aa1bd;--card:#1b1e2e;--line:#2d3150;--acc:#8b97ff;--on:#12141f;--ok:#5fd9bd;--okbg:#14352e;--bad:#ff8a9b;--badbg:#3b1b23;--hl:#4a4217;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12141f;--ink:#e8eaf6;--mut:#9aa1bd;--card:#1b1e2e;--line:#2d3150;--acc:#8b97ff;--on:#12141f;--ok:#5fd9bd;--okbg:#14352e;--bad:#ff8a9b;--badbg:#3b1b23;--hl:#4a4217;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 56px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 Lexend,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Lexend,system-ui,sans-serif;line-height:1.15;margin:0 0 .6rem}
+h1{font-size:clamp(2rem,7vw,3.3rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.6rem;font-weight:800;margin-top:2.2rem}
+h3{font-size:1.15rem;font-weight:600;margin-top:1.6rem}
+p{margin:.5rem 0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+nav{display:flex;gap:.25rem;max-width:760px;margin:0 auto;padding:.5rem 1rem;overflow-x:auto}
+nav a{color:var(--mut);text-decoration:none;padding:.4rem .9rem;border-radius:99px;font-weight:500;white-space:nowrap}
+nav a.on{background:var(--acc);color:var(--on)}
+nav a:focus-visible,button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+main{max-width:760px;margin:0 auto;padding:1.5rem 1rem 4rem}
+section[hidden]{display:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem;margin:1rem 0}
+.q{font-size:1.15rem;font-weight:500}
+.mp{font-size:1.05rem;line-height:2.1}
+.mp span{margin-right:.3rem}
+.mp span::before{content:attr(data-l);font:600 .68rem Lexend,sans-serif;background:var(--acc);color:var(--on);border-radius:4px;padding:.1rem .35rem;margin-right:.3rem;vertical-align:.15em}
+mark{background:var(--hl);color:inherit;border-radius:3px;padding:0 .15rem}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:.95rem}
+th,td{text-align:left;padding:.55rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:500;color:var(--mut)}
+.bad{color:var(--bad)}.good{color:var(--ok)}
+button,.btn{font:500 .95rem Lexend,sans-serif;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.45rem .8rem;cursor:pointer;text-decoration:none;display:inline-block}
+button.pri,.btn.pri{background:var(--acc);color:var(--on);border-color:var(--acc)}
+.tile{background:var(--card);border:1.5px solid var(--acc);color:var(--acc);margin:.2rem .25rem .2rem 0}
+.line{min-height:3rem;border-bottom:2px solid var(--line);padding:.4rem 0;margin:.3rem 0 .6rem;font-size:1.05rem}
+.line .tile{background:var(--acc);color:var(--on)}
+.fb{margin:.4rem 0 0;font-size:.92rem;min-height:1.4rem}
+.fb.ok{color:var(--ok)}.fb.no{color:var(--bad)}
+.item{border-top:1px solid var(--line);padding:.9rem 0}
+.item:first-of-type{border-top:0}
+select,input[type=text],textarea{font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:.3rem .5rem}
+input[type=text]{width:100%;margin-top:.3rem}
+textarea{width:100%;min-height:11rem;padding:.8rem;line-height:1.6}
+select.ok,input.ok{background:var(--okbg);border-color:var(--ok)}
+select.no,input.no{background:var(--badbg);border-color:var(--bad)}
+.bar{height:8px;background:var(--line);border-radius:9px;overflow:hidden;margin:.4rem 0}
+.bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .2s}
+.bar.done i{background:var(--ok)}
+.chips span{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:.1rem .7rem;margin:.15rem .2rem .15rem 0;color:var(--mut)}
+.chips span.on{background:var(--okbg);border-color:var(--ok);color:var(--ok)}
+label.ck{display:block;margin:.3rem 0}
+label{display:block;margin:.5rem 0}
+textarea.sm{min-height:6rem}
+.lead{color:var(--mut);font-size:1.1rem;max-width:34rem}
+.qbox{border:2px solid var(--acc);border-radius:14px;padding:1rem 1.3rem 1.1rem;margin:1.2rem 0;background:var(--card)}
+.ql{font:600 .72rem Lexend,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--acc);margin-bottom:.35rem}
+.qbox .q{font-size:1.3rem;font-weight:500;line-height:1.5;margin:0}
+.intro p,.intro label{font-size:.9rem;line-height:1.55}
+.intro textarea{font-size:1rem}
+.mdl{margin-top:.45rem;font-size:.85rem;line-height:1.5;background:var(--bg);border-radius:8px;padding:.4rem .7rem}
+.mdl b{display:inline;color:var(--acc);font:600 .66rem Lexend,sans-serif;letter-spacing:.08em;text-transform:uppercase;margin-right:.5rem}
+.pl{padding:.4rem 1.2rem}
+.pi{padding:.8rem 0;border-top:1px solid var(--line)}
+.pi:first-child{border-top:0}
+.pt{display:flex;flex-wrap:wrap;gap:.2rem .8rem;align-items:baseline}
+.pt b{font-weight:600;font-size:1.08rem;color:var(--acc)}
+.pt span{color:var(--mut);font-size:.82rem;background:var(--bg);border-radius:99px;padding:.05rem .6rem}
+.ex{font-size:.8rem;color:var(--mut);margin-top:.3rem}
+.pl .note{font-size:.9rem;color:var(--mut);margin:.4rem 0 .6rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><nav aria-label="Sections">
+<a href="#learn" data-t="learn">Learn</a><a href="#practice" data-t="practice">Practice</a><a href="#write" data-t="write">Write</a>
+</nav></header>
+<main>
+
+<section id="learn">
+<h1>IELTS Short Writing Practice</h1>
+<p class="lead">IELTS Writing Task 2, Band 3.5 to 4.0+. Topic: social media and teenagers.</p>
+<div class="qbox"><div class="ql">Essay question</div><p class="q">Some people think that social media is bad for teenagers. Do you agree or disagree?</p></div>
+<div class="card intro"><p>In Task 2 you write about 250 words: Introduction (about 40), Body 1 (80 to 100), Body 2 (80 to 100), Conclusion (30 to 40). Each body paragraph is built from good sentences, so we practise sentences first.</p>
+<p><b>Brainstorm your ideas.</b> Write your ideas here. Then we will discuss them with the class. You will use them in the Write tab.</p>
+<label>Good things about social media for teenagers<textarea id="b1" class="sm" placeholder="keep in touch, learn new things, …"></textarea></label>
+<label>Problems with social media for teenagers<textarea id="b2" class="sm" placeholder="waste time, sleep less, …"></textarea></label></div>
+
+<h2>Model paragraph</h2>
+<div class="card"><p class="mp">
+<span data-l="T">Social media is not bad for teenagers <mark>because</mark> it is useful in two ways.</span>
+<span data-l="E">The main reason is that many students live far from their relatives, <mark>so</mark> they can talk to them online every day.</span>
+<span data-l="E">In addition, teenagers can learn new things from videos, <mark>which</mark> are free and easy to watch.</span>
+<span data-l="Ex">For example, my cousin learned to cook by watching short videos on TikTok, <mark>and</mark> now she makes dinner for her family every weekend.</span>
+<span data-l="R">As a result, she feels more independent.</span>
+<span data-l="L">Therefore, social media is a useful tool for young people.</span></p>
+<p style="color:var(--mut);font-size:.9rem">T topic sentence, E explanation, Ex example, R result, L link back to the question. About 90 words.</p></div>
+
+<h2>Sentence toolkit</h2>
+<h3>Every sentence needs a subject and a verb</h3>
+<div class="card wrap"><table><tr><th>Who</th><th>Does what</th><th>What</th><th>Where / when / why</th></tr>
+<tr><td>Teenagers</td><td>use</td><td>social media</td><td>every day.</td></tr>
+<tr><td>Many students</td><td>watch</td><td>short videos</td><td>after school.</td></tr>
+<tr><td>Social media</td><td>is</td><td>a useful tool</td><td>for young people.</td></tr></table></div>
+<h3>Join two ideas</h3>
+<div class="card wrap"><table><tr><th>Word</th><th>Shows</th><th>Example</th></tr>
+<tr><td><b>and</b></td><td>adds an idea</td><td>Teenagers chat with friends, and they share photos.</td></tr>
+<tr><td><b>but</b></td><td>contrast</td><td>Social media is fun, but it can waste time.</td></tr>
+<tr><td><b>so</b></td><td>result</td><td>Many students live far away, so they use video calls.</td></tr>
+<tr><td><b>because</b></td><td>reason</td><td>Teenagers use it because it is free.</td></tr>
+<tr><td><b>when</b></td><td>time</td><td>They check their phones when they wake up.</td></tr>
+<tr><td><b>which</b></td><td>extra information</td><td>They watch videos, which are free and easy to find.</td></tr></table>
+<p style="font-size:.9rem;color:var(--mut)">Comma before and, but, so (joining two full sentences) and before which. Usually no comma before because.</p></div>
+<h3>Common mistakes</h3>
+<div class="card wrap"><table><tr><th>Mistake</th><th>Wrong</th><th>Correct</th></tr>
+<tr><td>Run-on</td><td class="bad">She uses TikTok, she learns new things.</td><td class="good">She uses TikTok, and she learns new things.</td></tr>
+<tr><td>Fragment</td><td class="bad">Because it is free.</td><td class="good">Teenagers like it because it is free.</td></tr>
+<tr><td>Missing be</td><td class="bad">Social media popular.</td><td class="good">Social media is popular.</td></tr>
+<tr><td>Agreement</td><td class="bad">She use Instagram.</td><td class="good">She uses Instagram.</td></tr>
+<tr><td>Plural</td><td class="bad">Many teenager spend time online.</td><td class="good">Many teenagers spend time online.</td></tr>
+<tr><td>Word order</td><td class="bad">Teenagers every night chat with friends.</td><td class="good">Teenagers chat with friends every night.</td></tr></table></div>
+
+<h2>Build a paragraph: TEEL</h2>
+<div class="card wrap"><table><tr><th>Part</th><th>What it does</th><th>In the model</th></tr>
+<tr><td><b>T</b>opic sentence</td><td>Gives your main idea and answers the question.</td><td>Social media is not bad for teenagers because it is useful in two ways.</td></tr>
+<tr><td><b>E</b>xplanation</td><td>Says why. One or two sentences.</td><td>The main reason is that many students live far from their relatives, so …</td></tr>
+<tr><td><b>E</b>xample</td><td>Gives a real, specific example.</td><td>For example, my cousin learned to cook by watching short videos …</td></tr>
+<tr><td><b>R</b>esult / <b>L</b>ink</td><td>Shows the result and connects back to the question.</td><td>As a result, … Therefore, social media is a useful tool …</td></tr></table>
+<p style="font-size:.9rem;color:var(--mut)">One paragraph, one main idea. Use your own words and do not copy the question. Every sentence must support the topic sentence. Do not learn a paragraph by heart.</p></div>
+
+<h2>Useful language</h2>
+<h3>Easy sentence patterns</h3>
+<div class="card pl">
+<div class="pi"><div class="pt"><b>S + be + adjective</b><span>describe something</span></div><div class="ex">Social media is useful for teenagers.</div></div>
+<div class="pi"><div class="pt"><b>S + V + O</b><span>say what people do</span></div><div class="ex">Teenagers use social media every day.</div></div>
+<div class="pi"><div class="pt"><b>S + can + V</b><span>say what is possible</span></div><div class="ex">Teenagers can learn new things online.</div></div>
+<div class="pi"><div class="pt"><b>S + V + because + S + V</b><span>give a reason</span></div><div class="ex">Teenagers like social media because it is free.</div></div>
+<div class="pi"><div class="pt"><b>S + V, so + S + V</b><span>show a result</span></div><div class="ex">Many students live far away, so they use video calls.</div></div>
+<div class="pi"><div class="pt"><b>S + V, but + S + V</b><span>show contrast</span></div><div class="ex">Social media is fun, but it can waste time.</div></div>
+<div class="pi"><div class="pt"><b>S + spend + time + on + noun</b><span>talk about habits</span></div><div class="ex">Many teenagers spend too much time on social media.</div></div>
+<div class="pi"><div class="pt"><b>S + help(s) + someone + (to) + V</b><span>say the benefit</span></div><div class="ex">Social media helps teenagers keep in touch with friends.</div></div>
+<div class="pi"><div class="pt"><b>I agree / disagree that + S + V</b><span>give your opinion</span></div><div class="ex">I agree that social media is useful for teenagers.</div></div>
+<p class="note">S = subject (who or what). V = verb. With he, she, it, add -s to the verb: She uses Instagram.</p></div>
+<h3>Linking phrases for a paragraph</h3>
+<div class="card pl">
+<div class="pi"><div class="pt"><b>The main reason is that + S + V</b><span>explain</span></div><div class="ex">The main reason is that many students live far away.</div></div>
+<div class="pi"><div class="pt"><b>In addition, + S + V</b><span>add an idea</span></div><div class="ex">In addition, teenagers can learn new things.</div></div>
+<div class="pi"><div class="pt"><b>For example, + S + V</b><span>give an example</span></div><div class="ex">For example, my cousin learned to cook online.</div></div>
+<div class="pi"><div class="pt"><b>As a result, + S + V</b><span>show a result</span></div><div class="ex">As a result, she feels more independent.</div></div>
+<div class="pi"><div class="pt"><b>Therefore, + S + V</b><span>link back to the question</span></div><div class="ex">Therefore, social media is useful for young people.</div></div>
+<p class="note">More choices: Moreover, For instance, This means that, In conclusion. Use a variety. Do not repeat the same one every time.</p></div>
+<h3>Topic vocabulary</h3>
+<div class="card pl">
+<div class="pi"><div class="pt"><b>keep in touch with</b><span>giữ liên lạc với</span></div><div class="ex">Social media helps me keep in touch with my family.</div></div>
+<div class="pi"><div class="pt"><b>make new friends</b><span>kết bạn mới</span></div><div class="ex">Teenagers can make new friends online.</div></div>
+<div class="pi"><div class="pt"><b>share photos and videos</b><span>chia sẻ ảnh và video</span></div><div class="ex">Many teenagers share photos and videos every day.</div></div>
+<div class="pi"><div class="pt"><b>spend time on</b><span>dành thời gian cho</span></div><div class="ex">Many teenagers spend too much time on social media.</div></div>
+<div class="pi"><div class="pt"><b>check your phone</b><span>xem điện thoại</span></div><div class="ex">Teenagers often check their phones when they wake up.</div></div>
+<div class="pi"><div class="pt"><b>stay up late</b><span>thức khuya</span></div><div class="ex">My brother stays up late to watch videos.</div></div>
+<div class="pi"><div class="pt"><b>sleep less</b><span>ngủ ít hơn</span></div><div class="ex">Teenagers sleep less because they use their phones at night.</div></div>
+<div class="pi"><div class="pt"><b>learn new things</b><span>học những điều mới</span></div><div class="ex">Students can learn new things from online videos.</div></div>
+<div class="pi"><div class="pt"><b>get information quickly</b><span>nhận thông tin nhanh chóng</span></div><div class="ex">Social media helps people get information quickly.</div></div>
+<div class="pi"><div class="pt"><b>feel stressed</b><span>cảm thấy căng thẳng</span></div><div class="ex">Some teenagers feel stressed when they see perfect photos online.</div></div>
+<div class="pi"><div class="pt"><b>waste time</b><span>lãng phí thời gian</span></div><div class="ex">Watching videos all night wastes time.</div></div>
+<div class="pi"><div class="pt"><b>limit screen time</b><span>hạn chế thời gian dùng màn hình</span></div><div class="ex">Parents can help children limit screen time.</div></div>
+<div class="pi"><div class="pt"><b>be careful with personal information</b><span>cẩn thận với thông tin cá nhân</span></div><div class="ex">Teenagers should be careful with personal information online.</div></div>
+<div class="pi"><div class="pt"><b>online friends</b><span>bạn bè trên mạng</span></div><div class="ex">She talks to her online friends every evening.</div></div>
+<p class="note">Avoid: copying the question, two sentences joined by only a comma, very … very …, and good / bad / thing again and again.</p></div>
+</section>
+
+<section id="practice" hidden>
+<h1>Practice</h1>
+<p class="lead">Check your answer after each item. You can try again as many times as you like.</p>
+
+<h2>1. Put the words in order</h2>
+<p>Tap the words to build the sentence. Tap a word in your sentence to take it back.</p>
+<div class="card" id="ex1"></div>
+
+<h2>2. Make the sentence longer</h2>
+<p>Start with: Teenagers use social media. Add the information step by step. Write the whole sentence each time.</p>
+<div class="card" id="ex2"></div>
+
+<h2>3. Choose the joining word</h2>
+<div class="card" id="ex3"></div>
+
+<h2>4. Join the two sentences</h2>
+<p>Use the word in brackets. Write the whole sentence.</p>
+<div class="card" id="ex4"></div>
+
+<h2>5. Correct the mistake</h2>
+<p>Rewrite each sentence correctly. Write the whole sentence.</p>
+<div class="card" id="ex5"></div>
+
+<h2>6. Build topic sentences</h2>
+<p>Use the key words to write one full sentence that answers: Is social media good or bad for teenagers? You can add words.</p>
+<div class="card" id="ex6"></div>
+
+<h2>7. Build supporting sentences</h2>
+<p>Topic sentence: <i>Social media can help teenagers to learn new skills.</i> Write the sentences that follow.</p>
+<div class="card" id="ex7"></div>
+
+<h2>8. Choose the best topic sentence</h2>
+<p>Question: Is social media bad for teenagers?</p>
+<div class="card" id="ex8"></div>
+
+<h2>9. Put the sentences in order</h2>
+<p>Write the position (1 to 6) for each sentence to build a paragraph: topic sentence, explanations, example, result, link.</p>
+<div class="card" id="ex9"></div>
+
+<h2>10. Find the sentence that does not belong</h2>
+<div class="card" id="ex10"></div>
+</section>
+
+<section id="write" hidden>
+<h1>Write your paragraph</h1>
+<p class="lead">Write at least 80 words. Use at least 3 different joining words.</p>
+<div class="card"><p><b>Your brainstorm ideas</b></p><p id="ideas" style="white-space:pre-wrap;color:var(--mut);margin:0"></p></div>
+<div class="card"><label for="qs"><b>Choose a question</b></label><br>
+<select id="qs"><option>A. Some people think that social media is bad for teenagers. What is your opinion? AGREE: write about ONE reason.</option><option>B. Some people think that social media is bad for teenagers. What is your opinion? DISAGREE: write about ONE reason.</option></select></div>
+<div class="card"><p><b>Plan in full sentences</b></p>
+<label>Topic sentence (answer the question)<input type="text" id="p1"></label>
+<label>Explanation (why?)<input type="text" id="p2"></label>
+<label>Another reason (optional)<input type="text" id="p3"></label>
+<label>Example (who, when, how much?)<input type="text" id="p4"></label>
+<label>Result or link back to the question<input type="text" id="p5"></label>
+<p><button id="pj">Move my plan into the paragraph</button></p></div>
+<textarea id="tx" aria-label="Your paragraph" placeholder="Social media is bad for teenagers because …"></textarea>
+<div class="bar" id="bar"><i></i></div>
+<p><b id="wc">0</b> of 80 words</p>
+<p>Joining words found:</p><div class="chips" id="chips"></div>
+<h3>Check it</h3>
+<div class="card" id="ck">
+<label class="ck"><input type="checkbox"> My first sentence is a clear topic sentence that answers the question.</label>
+<label class="ck"><input type="checkbox"> I gave an explanation and a specific example.</label>
+<label class="ck"><input type="checkbox"> Every sentence has a subject and a verb.</label>
+<label class="ck"><input type="checkbox"> No sentences are joined with only a comma, and none is unfinished.</label>
+<label class="ck"><input type="checkbox"> I checked -s endings, plural nouns and word order.</label></div>
+<button class="pri" id="cp">Copy paragraph</button> <button id="cl">Clear</button> <span id="cm" class="fb"></span>
+<h3>Feedback and next steps</h3>
+<div class="card"><p>Ask a classmate to read your paragraph.</p>
+<label>One thing that is good<input type="text"></label>
+<label>One thing to improve<input type="text"></label>
+<p><b>My targets for next time</b></p>
+<label class="ck"><input type="checkbox"> Write a clearer topic sentence</label>
+<label class="ck"><input type="checkbox"> Add a more specific example</label>
+<label class="ck"><input type="checkbox"> Use more different joining words</label>
+<label class="ck"><input type="checkbox"> Avoid run-on sentences and fragments</label>
+<label class="ck"><input type="checkbox"> Check -s endings and plural nouns</label></div>
+<h3>Homework</h3>
+<div class="card"><p>1. Rewrite your paragraph after the feedback and correct all mistakes.<br>2. Write a second body paragraph (80 to 100 words) for the other side of the question.</p></div>
+<p style="color:var(--mut);font-size:.9rem">In the real test, one body paragraph takes about 10 minutes. Keep the last 2 to 3 minutes to check every sentence for a subject, a verb and punctuation.</p>
+</section>
+
+</main>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)};
+var T=["learn","practice","write"];
+function show(){var h=location.hash.slice(1);if(T.indexOf(h)<0)h="learn";T.forEach(function(t){$("#"+t).hidden=t!==h;$('[data-t="'+t+'"]').classList.toggle("on",t===h)});scrollTo(0,0)}
+addEventListener("hashchange",show);show();
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt)e.textContent=txt;return e}
+function shuf(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function norm(s){return s.toLowerCase().replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim()}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)+"."}
+
+var E1=["Teenagers use social media every day","They chat with friends online","Many students watch short videos after school","Social media is a useful tool","Some teenagers spend too much time on their phones","Teenagers can learn new things from online videos"];
+E1.forEach(function(s,n){
+ var box=el("div","item"),line=el("div","line"),bank=el("div"),fb=el("p","fb"),b1=el("button","pri","Check"),b2=el("button","","Reset");
+ var words=s.toLowerCase().split(" "),ans=[],pool=[];
+ function reset(){ans=[];pool=shuf(words.map(function(w,i){return{w:w,i:i}}));fb.textContent="";fb.className="fb";draw()}
+ function draw(){line.innerHTML="";bank.innerHTML="";
+  ans.forEach(function(o,k){var b=el("button","tile",o.w);b.onclick=function(){ans.splice(k,1);pool.push(o);draw()};line.appendChild(b)});
+  pool.forEach(function(o,k){var b=el("button","tile",o.w);b.onclick=function(){pool.splice(k,1);ans.push(o);draw()};bank.appendChild(b)})}
+ b1.onclick=function(){var got=ans.map(function(o){return o.w}).join(" ");
+  if(ans.length<words.length){fb.textContent="Use all the words.";fb.className="fb no"}
+  else if(got===s.toLowerCase()){fb.textContent="Correct: "+cap(s);fb.className="fb ok"}
+  else{fb.textContent="Not yet. Order: who, does what, what, where or when.";fb.className="fb no"}};
+ b2.onclick=reset;
+ var h=el("b","",(n+1)+".");box.append(h,line,bank,b1," ",b2,fb);$("#ex1").appendChild(box);reset()});
+
+var E3=[["Social media is fun, _ it can waste time.","but"],["Teenagers use social media _ they want to talk to friends.","because"],["My parents live in Da Nang, _ I call them every night.","so"],["Teenagers often check their phones _ they wake up.","when"],["She watches cooking videos, _ are free and easy to find.","which"],["They chat with friends _ share funny photos.","and"]];
+var sels=[];
+E3.forEach(function(r,n){var p=el("p");var parts=r[0].split("_");var s=el("select");
+ ["","and","but","so","because","when","which"].forEach(function(o){var op=el("option","",o||"choose");op.value=o;s.appendChild(op)});
+ p.append((n+1)+". "+parts[0],s,parts[1]);$("#ex3").appendChild(p);sels.push(s)});
+var c3=el("button","pri","Check");c3.onclick=function(){sels.forEach(function(s,i){s.className=s.value===E3[i][1]?"ok":"no"})};$("#ex3").appendChild(c3);
+
+var E5=[["Social media very popular among teenagers.",["social media is popular among teenagers"]],["She use Instagram every day.",["she uses instagram every day"]],["Many teenager spend too much time online.",["many teenagers spend too much time online"]],["Teenagers watch videos, they learn new things.",["teenagers watch videos and they learn new things","teenagers watch videos so they learn new things","teenagers watch videos and learn new things","teenagers watch videos to learn new things","teenagers watch videos because they learn new things"]],["Because social media is free.",["teenagers like social media because it is free","many teenagers use social media because it is free","teenagers use social media because it is free"]],["Teenagers every night chat with friends.",["teenagers chat with friends every night"]]];
+var ins=[];
+E5.forEach(function(r,n){var d=el("div","item");d.appendChild(el("span","bad",(n+1)+". "+r[0]));var i=el("input");i.type="text";i.setAttribute("aria-label","Correction "+(n+1));d.appendChild(i);$("#ex5").appendChild(d);ins.push(i)});
+var c5=el("button","pri","Check"),f5=el("p","fb");c5.onclick=function(){var bad=[];ins.forEach(function(i,k){var ok=E5[k][1].indexOf(norm(i.value))>=0;i.className=ok?"ok":"no";if(!ok)bad.push(k)});f5.className=bad.length?"fb no":"fb ok";f5.textContent=bad.length?"Check item(s) "+bad.map(function(k){return k+1}).join(", ")+".":"All correct.";if(bad.length){var w=el("span");w.style.cssText="display:block;margin-top:.4rem;color:var(--ink);font-size:.92rem";w.appendChild(el("b","","Model answers"));bad.forEach(function(k){var l=el("span","",(k+1)+". "+cap(E5[k][1][0]));l.style.display="block";w.appendChild(l)});f5.appendChild(w)}};
+$("#ex5").append(c5,f5);
+
+var S9=["The main reason is that many teenagers check their phones at night, so they sleep for only five or six hours.","For example, my brother plays games and watches videos until midnight, and he often falls asleep in the morning lessons.","Social media can be bad for teenagers because they often stay up too late.","As a result, his grades are lower than before.","In addition, they feel tired in class, which makes it difficult to study.","Therefore, teenagers should limit the time they spend on social media."];
+var P9=[2,4,1,5,3,6],s9=[];
+S9.forEach(function(t,n){var p=el("p");var s=el("select");[""].concat([1,2,3,4,5,6]).forEach(function(o){var op=el("option","",o||"?");op.value=o;s.appendChild(op)});p.append(s," "+t);$("#ex9").appendChild(p);s9.push(s)});
+var c9=el("button","pri","Check"),f9=el("p","fb");c9.onclick=function(){var all=true;s9.forEach(function(s,i){var ok=+s.value===P9[i];s.className=ok?"ok":"no";if(!ok)all=false});f9.className=all?"fb ok":"fb no";f9.textContent=all?"Correct: topic sentence, reason, extra reason, example, result, link.":"Some positions are wrong. Look for the topic sentence first and the link last."};
+$("#ex9").append(c9,f9);
+
+function mk(id,items,open){var root=$(id),ins=[];items.forEach(function(r,n){var d=el("div","item");d.appendChild(el("span","",(n+1)+". "+r[0]));var i=el("input");i.type="text";i.setAttribute("aria-label","Answer "+(n+1));d.appendChild(i);root.appendChild(d);ins.push(i)});var b=el("button","pri","Check"),f=el("p","fb");b.onclick=function(){if(open==="model"){ins.forEach(function(i,k){i.className="";var d=i.parentNode,m=d.querySelector(".mdl");if(!m){m=el("div","mdl");d.appendChild(m)}m.textContent="";m.append(el("b","","Model answer"),items[k][2])});f.className="fb";f.textContent="Compare your sentences with the model answers. A different idea is fine if the grammar is correct.";return}var bad=[];ins.forEach(function(i,k){var ok=items[k][1](norm(i.value));i.className=ok?"ok":"no";if(!ok)bad.push(k)});f.className=bad.length?"fb no":"fb ok";if((open==="list"||open==="para")&&bad.length){f.textContent="Item(s) "+bad.map(function(k){return k+1}).join(", ")+": the required part is not clear yet.";var v=el("span");v.style.cssText="display:block;margin-top:.4rem;color:var(--ink);font-size:.92rem";v.appendChild(el("b","","Example"));if(open==="list"){bad.forEach(function(k){var l=el("span","",(k+1)+". "+items[k][2]);l.style.display="block";v.appendChild(l)})}else{var q=el("span","",items.map(function(r){return r[2]}).join(" "));q.style.display="block";v.appendChild(q)}f.appendChild(v);return}if(open==="lines"&&bad.length){f.textContent="Check item(s) "+bad.map(function(k){return k+1}).join(", ")+".";var w=el("span");w.style.cssText="display:block;margin-top:.4rem;color:var(--ink);font-size:.92rem";w.appendChild(el("b","","Model answers"));bad.forEach(function(k){var l=el("span","",(k+1)+". "+items[k][2]);l.style.display="block";w.appendChild(l)});f.appendChild(w);return}f.textContent=bad.length?(open?"Item(s) "+bad.map(function(k){return k+1}).join(", ")+": the required part is not clear yet. Your own idea may still be correct, so check the example and ask your teacher. Example: "+bad.map(function(k){return items[k][2]}).join(" "):"Check item(s) "+bad.map(function(k){return k+1}).join(", ")+". Model: "+bad.map(function(k){return items[k][2]}).join(" ")):"All correct."};root.append(b,f)}
+function one(a){return function(t){return a.indexOf(t)>=0}}
+function wc(t){return t.split(" ").length}
+mk("#ex2",[["Add who (many, some or most).",function(t){return /teenagers/.test(t)&&/use(s)? social media/.test(t)&&/(^| )(many|some|most|lots of|a lot of|all|young|few) /.test(t)},"Many teenagers use social media."],["Add when or how often.",function(t){return /teenagers/.test(t)&&/use(s)? social media/.test(t)&&/ (every|after|at|on|in|during|often|usually|always|daily|each|before|when|night|morning|evening|weekend|school) /.test(t+" ")&&wc(t)>=6},"Many teenagers use social media every day after school."],["Add why with because.",function(t){return /social media/.test(t)&&/ (because|since|so) /.test(t)&&wc(t)>=8},"Many teenagers use social media every day because it is fast and free."],["Now stretch this one: Students watch videos. (who, when, why)",function(t){return /watch/.test(t)&&/videos?/.test(t)&&/ (because|since|so|to) /.test(t)&&wc(t)>=8},"Many students watch short videos on their phones after class because they want to relax."]],"model");
+mk("#ex4",[["Teenagers like social media. It is free. (because)",one(["teenagers like social media because it is free"]),"Teenagers like social media because it is free."],["Many teenagers have phones. They use apps every day. (so)",one(["many teenagers have phones so they use apps every day"]),"Many teenagers have phones, so they use apps every day."],["Social media is fun. It can be dangerous. (but)",one(["social media is fun but it can be dangerous"]),"Social media is fun, but it can be dangerous."],["Teenagers share photos. They chat with friends. (and)",one(["teenagers share photos and chat with friends","teenagers share photos and they chat with friends"]),"Teenagers share photos and chat with friends."],["Teenagers watch short videos. The videos are funny. (which)",one(["teenagers watch short videos which are funny"]),"Teenagers watch short videos, which are funny."],["I feel tired. I stay up late on my phone. (when)",one(["i feel tired when i stay up late on my phone","when i stay up late on my phone i feel tired"]),"I feel tired when I stay up late on my phone."]],"lines");
+mk("#ex6",[["social media / useful / teenagers / because / learn new things",function(t){return /social media/.test(t)&&/useful/.test(t)&&/because/.test(t)&&/learn/.test(t)},"Social media is useful for teenagers because they can learn new things."],["many teenagers / spend too much time / social media / so / sleep less",function(t){return /spend too much time/.test(t)&&/ so /.test(t)&&/sleep less/.test(t)},"Many teenagers spend too much time on social media, so they sleep less."],["social media / not bad / because / keep in touch / friends and family",function(t){return /not bad/.test(t)&&/because/.test(t)&&/keep in touch/.test(t)},"Social media is not bad because teenagers can keep in touch with friends and family."],["Write your own topic sentence with because or so.",function(t){return wc(t)>=7&&/(because| so )/.test(t)},"Social media is bad for teenagers because they spend too much time on it."]],"list");
+mk("#ex7",[["Explanation. Start with: The main reason is that …",function(t){return /^the main reason is that .{15,}/.test(t)},"The main reason is that there are many free videos on social media, which teach people useful skills."],["Example. Start with: For example, …",function(t){return /^for example .{20,}/.test(t)},"For example, my friend learned to play the guitar by watching online lessons, and now she plays for her family."],["Result. Start with: As a result, …",function(t){return /^as a result .{8,}/.test(t)},"As a result, she feels more confident."],["Link back. Start with: Therefore, …",function(t){return /^therefore .{10,}/.test(t)},"Therefore, social media can be useful for learning new skills."]],"para");
+(function(){var r=$("#ex8"),o=[["A. Social media is popular.","Not the best. It is too general and does not answer the question."],["B. Social media can be bad for teenagers because they often stay up too late.","Correct. It answers the question and gives a clear reason."],["C. I use Facebook and Instagram every night.","Not the best. It is a personal fact, not an answer to the question."]],f=el("p","fb");o.forEach(function(x,i){var b=el("button","",x[0]);b.style.cssText="display:block;margin:.4rem 0;text-align:left";b.onclick=function(){f.textContent=x[1];f.className=i===1?"fb ok":"fb no"};r.appendChild(b)});r.appendChild(f)})();
+(function(){var r=$("#ex10"),S=["Social media helps teenagers to learn English.","First, they can watch videos with English subtitles.","This helps them to understand new words.","My father likes to drink coffee in the morning.","For example, my friend improved her listening by watching English channels every night.","Therefore, social media can be a good tool for language learning."],s=el("select"),f=el("p","fb"),b=el("button","pri","Check");S.forEach(function(t,i){r.appendChild(el("p","","("+(i+1)+") "+t))});["",1,2,3,4,5,6].forEach(function(o){var op=el("option","",o||"?");op.value=o;s.appendChild(op)});b.onclick=function(){var ok=s.value==="4";s.className=ok?"ok":"no";f.className=ok?"fb ok":"fb no";f.textContent=ok?"Correct. Sentence 4 is about coffee, not about learning English on social media.":"Look for the sentence that does not support the topic sentence."};r.append("Sentence number: ",s," ",b,f)})();
+function sy(){var a=$("#b1").value.trim(),b=$("#b2").value.trim();$("#ideas").textContent=(a||b)?"Good things: "+(a||"-")+"\nProblems: "+(b||"-"):"Write your ideas in the Learn tab first."}
+["b1","b2"].forEach(function(id){var e=$("#"+id);try{var v=localStorage.getItem("sw-"+id);if(v)e.value=v}catch(x){}e.addEventListener("input",function(){try{localStorage.setItem("sw-"+id,e.value)}catch(x){}sy()})});
+addEventListener("hashchange",sy);sy();
+var tx=$("#tx"),L=["and","but","so","because","when","which"],chips=$("#chips");
+L.forEach(function(w){chips.appendChild(el("span","",w))});
+try{var d=localStorage.getItem("sw-draft");if(d)tx.value=d}catch(e){}
+function upd(){var t=tx.value.trim(),n=t?t.split(/\s+/).length:0;$("#wc").textContent=n;
+ var b=$("#bar");b.firstElementChild.style.width=Math.min(100,n/80*100)+"%";b.classList.toggle("done",n>=80);
+ var low=" "+norm(tx.value)+" ";[].forEach.call(chips.children,function(c){c.classList.toggle("on",low.indexOf(" "+c.textContent+" ")>=0)});
+ try{localStorage.setItem("sw-draft",tx.value)}catch(e){}}
+tx.addEventListener("input",upd);upd();
+$("#cp").onclick=function(){var m=$("#cm");try{navigator.clipboard.writeText(tx.value).then(function(){m.textContent="Copied."},function(){m.textContent="Select the text and copy it."})}catch(e){m.textContent="Select the text and copy it."}};
+$("#qs").onchange=function(){tx.placeholder=this.selectedIndex?"Social media is not bad for teenagers because …":"Social media is bad for teenagers because …"};
+$("#cl").onclick=function(){tx.value="";upd()};
+$("#pj").onclick=function(){var v=["p1","p2","p3","p4","p5"].map(function(i){return $("#"+i).value.trim()}).filter(Boolean).join(" ");tx.value=(tx.value.trim()?tx.value.trim()+" ":"")+v;upd()};
+})();
+</script>
+</body>
+</html>
