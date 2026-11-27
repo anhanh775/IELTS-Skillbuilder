@@ -4,47 +4,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>IELTS Skill Builder (4.5+)</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.11.0/dist/tabler-icons.min.css">
 <style>
-:root{--bg:#f4f7fb;--ink:#1e2a3b;--mu:#64748b;--cd:#fff;--ln:#d9e2ef;--sh:0 6px 20px rgba(30,60,120,.08);--pill:#eaf1ff;--lr:#ea580c;--lrb:#fff1e6;--wr:#4f46e5;--wrb:#ecebff;--sp:#0891b2;--spb:#e1f5f9;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1624;--ink:#e8eefb;--mu:#93a3bd;--cd:#18223a;--ln:#26324d;--sh:0 6px 20px rgba(0,0,0,.35);--pill:#1d2d54;--lr:#fb923c;--lrb:#3a2616;--wr:#a5a0ff;--wrb:#25244d;--sp:#4dd0e8;--spb:#12323a;color-scheme:dark}}
+:root{--bg:#f8fafc;--ink:#0f172a;--mu:#64748b;--cd:#fff;--ln:#e2e8f0;--ln2:#cbd5e1;--br:#1d4ed8;--lr:#c2410c;--wr:#4338ca;--sp:#0e7490;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#0b1220;--ink:#f1f5f9;--mu:#94a3b8;--cd:#111a2e;--ln:#1f2a44;--ln2:#33415f;--br:#60a5fa;--lr:#fb923c;--wr:#a5b4fc;--sp:#22d3ee;color-scheme:dark}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:500 1rem/1.6 "Plus Jakarta Sans",system-ui,sans-serif}
-main{max-width:1000px;margin:0 auto;padding:1.5rem 1rem 4rem}
-.hero{display:flex;align-items:center;gap:1rem;padding:1.5rem;border-radius:24px;background:#2563eb;color:#fff;box-shadow:0 8px 20px rgba(37,99,235,.22);margin-bottom:1.4rem}
-.hi{flex:none;width:3.6rem;height:3.6rem;border-radius:18px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:1.9rem}
-h1{font:800 clamp(1.6rem,5.5vw,2.5rem)/1.15 "Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:-.01em;margin:0}
-.hs{margin:.3rem 0 0;color:rgba(255,255,255,.88);font-size:.95rem}
-.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:.9rem}
-.t{--c:var(--mu);--cb:var(--pill);display:flex;flex-direction:column;gap:.55rem;min-height:9.5rem;padding:1rem;border-radius:22px;background:var(--cd);box-shadow:var(--sh);color:inherit;text-decoration:none;transition:transform .15s}
-.t.lr{--c:var(--lr);--cb:var(--lrb)}.t.wr{--c:var(--wr);--cb:var(--wrb)}.t.sp{--c:var(--sp);--cb:var(--spb)}
-.top{display:flex;justify-content:space-between;align-items:center}
-.n{font-weight:800;font-size:1.7rem;line-height:1;color:var(--c)}
-.ic{display:grid;place-items:center;width:2.3rem;height:2.3rem;border-radius:12px;background:var(--cb);color:var(--c);font-size:1.3rem}
-.nm{font-weight:700;font-size:.92rem;line-height:1.35}
-.pl{margin-top:auto;align-self:flex-start;font-weight:700;font-size:.74rem;padding:.15rem .7rem;border-radius:99px;background:var(--pill);color:var(--mu)}
-a.t .pl{background:var(--cb);color:var(--c)}
-a.t:hover{transform:translateY(-3px)}
-a.t:focus-visible{outline:3px solid var(--c);outline-offset:3px}
-.t.soon{box-shadow:none;background:transparent;border:1.5px dashed var(--ln)}
-.t.soon.named{box-shadow:var(--sh);background:var(--cd);border:0}
-.t.soon:not(.named) .nm{color:var(--mu);font-weight:500}
-@media (prefers-reduced-motion:reduce){.t{transition:none}a.t:hover{transform:none}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 Inter,system-ui,sans-serif}
+.bar{background:var(--cd);border-bottom:1px solid var(--ln)}
+.bar div{display:flex;align-items:center;gap:.65rem;max-width:1040px;margin:0 auto;padding:.9rem 1.2rem}
+.lg{display:grid;place-items:center;width:1.9rem;height:1.9rem;border-radius:8px;background:var(--br);color:#fff;font-size:1.1rem}
+.bn{font-size:.95rem;font-weight:700;letter-spacing:-.01em}
+.bd{margin-left:auto;font-size:.78rem;font-weight:600;color:var(--br);border:1px solid var(--br);border-radius:99px;padding:.1rem .7rem}
+main{max-width:1040px;margin:0 auto;padding:2.2rem 1.2rem 4rem}
+.ey{margin:0 0 .6rem;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--br)}
+h1{margin:0 0 1.8rem;font:700 clamp(1.9rem,6vw,2.6rem)/1.1 Inter,system-ui,sans-serif;letter-spacing:-.025em}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.8rem}
+.t{--c:var(--mu);display:flex;flex-direction:column;gap:.4rem;min-height:9.6rem;padding:1rem;border:1px solid var(--ln);border-radius:12px;background:var(--cd);color:inherit;text-decoration:none}
+.t.lr{--c:var(--lr)}.t.wr{--c:var(--wr)}.t.sp{--c:var(--sp)}
+.sk{display:flex;align-items:center;gap:.45rem;font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--mu)}
+.sk i{width:.5rem;height:.5rem;border-radius:50%;background:var(--c);display:inline-block}
+.n{margin-top:.1rem;font-size:1.9rem;font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.nm{font-size:.85rem;font-weight:500;line-height:1.4}
+.ft{margin-top:auto;display:flex;align-items:center;justify-content:space-between;font-size:.78rem;font-weight:600;color:var(--mu)}
+.ft .ti{font-size:1rem}
+a.t{border-color:var(--ln2)}
+a.t .ft{color:var(--c)}
+a.t:hover{border-color:var(--c)}
+a.t:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+.t.soon .n{color:var(--ln2)}
+.t.soon.named .n{opacity:.4;color:var(--ink)}
+.t.soon:not(.named){background:transparent;border-style:dashed}
+.t.soon:not(.named) .nm{color:var(--mu);font-weight:400}
 </style>
 </head>
 <body>
+<header class="bar"><div><span class="lg"><i class="ti ti-school" aria-hidden="true"></i></span><span class="bn">IELTS Skill Builder</span><span class="bd">4.5+</span></div></header>
 <main>
-<div class="hero"><div class="hi"><i class="ti ti-rocket" aria-hidden="true"></i></div><div><h1>IELTS Skill Builder (4.5+)</h1><p class="hs">30 short sessions. Pick a session to start.</p></div></div>
+<p class="ey">30-session programme</p>
+<h1>IELTS Skill Builder (4.5+)</h1>
 <ol class="grid" id="grid"></ol>
 <noscript><p>Please turn on JavaScript to see the sessions.</p></noscript>
 </main>
 <script>
 // To add a session: put its page in session-NN/index.html, then set href and title here.
-// skill: lr = listening/reading, wr = writing, sp = speaking (sets colour and icon).
+// skill: lr = listening/reading, wr = writing, sp = speaking (sets the colour and label).
 // An entry with no href is shown as “Coming soon”.
 (function(){
-var ICON={lr:"headphones",wr:"pencil",sp:"microphone"};
+var K={lr:"Listening & Reading",wr:"Writing",sp:"Speaking"};
 var S=[
  {title:"IELTS Short Listening & Reading Practice",skill:"lr"},
  {title:"IELTS Short Writing Practice",skill:"wr",href:"session-02/"},
@@ -55,12 +62,14 @@ for(var i=0;i<30;i++){
  var s=S[i]||{},li=document.createElement("li"),a=document.createElement(s.href?"a":"div");
  a.className="t"+(s.skill?" "+s.skill:"")+(s.href?"":" soon")+(s.title?" named":"");
  if(s.href)a.href=s.href;
- var hd=document.createElement("div");hd.className="top";
- var n=document.createElement("span");n.className="n";n.textContent=String(i+1).padStart(2,"0");hd.appendChild(n);
- if(s.skill){var ic=document.createElement("span");ic.className="ic";ic.innerHTML='<i class="ti ti-'+ICON[s.skill]+'" aria-hidden="true"></i>';hd.appendChild(ic)}
- var nm=document.createElement("span");nm.className="nm";nm.textContent=s.title||"Session "+(i+1);
- var pl=document.createElement("span");pl.className="pl";pl.textContent=s.href?"Start now":"Coming soon";
- a.append(hd,nm,pl);li.appendChild(a);g.appendChild(li);
+ var sk=document.createElement("div");sk.className="sk";
+ if(s.skill){var d=document.createElement("i");sk.appendChild(d);sk.appendChild(document.createTextNode(K[s.skill]))}else{sk.textContent="Session"}
+ var n=document.createElement("div");n.className="n";n.textContent=String(i+1).padStart(2,"0");
+ var nm=document.createElement("div");nm.className="nm";nm.textContent=s.title||"To be announced";
+ var ft=document.createElement("div");ft.className="ft";
+ var lb=document.createElement("span");lb.textContent=s.href?"Open session":"Coming soon";ft.appendChild(lb);
+ if(s.href){var ar=document.createElement("i");ar.className="ti ti-arrow-right";ar.setAttribute("aria-hidden","true");ft.appendChild(ar)}
+ a.append(sk,n,nm,ft);li.appendChild(a);g.appendChild(li);
 }
 })();
 </script>
