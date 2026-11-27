@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>IELTS Speaking Part 1: Education</title>
+<title>IELTS Speaking Part 1</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Lexend:wght@400;500&display=swap">
 <style>
 :root{--bg:#f0f5f6;--ink:#17262b;--mut:#52666c;--card:#fff;--line:#d3e0e3;--acc:#0b7285;--on:#fff;--ok:#0b7d68;--hl:#fff1b8;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -52,6 +52,8 @@ label.ck{margin:.3rem 0}
 .lead{color:var(--mut);font-size:1.1rem;max-width:34rem}
 .note{font-size:.9rem;color:var(--mut)}
 .big{font-family:"Bricolage Grotesque",Lexend,sans-serif;font-size:1.6rem;font-weight:600;line-height:1.25;margin:.4rem 0 1rem}
+.pills{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.pills button[aria-pressed=true]{background:var(--acc);color:var(--on);border-color:var(--acc)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -59,8 +61,9 @@ label.ck{margin:.3rem 0}
 <header><nav aria-label="Sections"><a href="../" class="back">← All sessions</a><a href="#questions" data-t="questions">Questions</a><a href="#tips" data-t="tips">Tips and practice</a></nav></header>
 <main>
 <section id="questions">
-<h1>IELTS Speaking Part 1: Education</h1>
+<h1 id="ttl">IELTS Speaking Part 1: Education</h1>
 <p class="lead">For each question: read the model, learn the language, then plan what you will say.</p>
+<div class="pills" id="topics" role="group" aria-label="Topics"></div>
 <div class="card"><p>Open a question. Follow the 4 steps:</p>
 <p><b>1. Model answer</b> (A answer, R reason, E example) · <b>2. Vocabulary</b> (words, collocations, phrases, idioms) · <b>3. Sentence structures</b> · <b>4. Plan your ideas</b>, then speak for 30 seconds.</p>
 <button id="oa">Open all</button> <button id="ca">Close all</button></div>
@@ -82,7 +85,7 @@ label.ck{margin:.3rem 0}
 <tr><td class="bad">I prefer study alone.</td><td class="good">I prefer studying alone.</td></tr>
 <tr><td class="bad">Yes, I do. (then silence)</td><td class="good">Yes, I do. I like it because …</td></tr></table></div>
 <h2>Practise with a partner</h2>
-<div class="card"><label>Topic <select id="tp"><option>All</option><option>Studies</option><option>School</option><option>Learning</option></select></label>
+<div class="card"><label>Topic <select id="tp"><option>All</option><option>Education</option><option>Hometown</option><option>Free time</option></select></label>
 <p class="big" id="qq">Press the button to get a question.</p>
 <button class="pri" id="dq">Draw a question</button> <button id="tm">Start 25 seconds</button> <b id="tt" style="margin-left:.5rem"></b></div>
 <div class="card"><p><b>Partner checklist</b></p>
@@ -146,8 +149,68 @@ s:[["I study English by + V-ing","I study English by listening to podcasts."],["
 i:["Your main way to study English:","How often or how long?","One result or example:"]}
 ];
 
+
+function tag(a,c){a.forEach(function(x){x.c=c});return a}
+tag(D,"Education");
+var H=tag([
+{t:"Place",q:"Where is your hometown?",
+m:[["A","My hometown is Can Tho, a city in the south of Vietnam."],["R","It is famous for its rivers and floating markets, so many tourists visit it."],["E","For example, people sell fruit from small boats early in the morning."]],
+v:[["be famous for","phrase","nổi tiếng về","Can Tho is famous for its floating markets."],["be located in","phrase","nằm ở","My town is located in the Mekong Delta."],["tourist attraction","collocation","điểm thu hút khách du lịch","The market is a popular tourist attraction."],["grow up","phrase","lớn lên","I grew up in a small town."],["off the beaten track","idiom","nơi ít người biết đến","My village is a bit off the beaten track."]],
+s:[["My hometown is + place, a + noun + in + area","My hometown is Hue, a city in central Vietnam."],["It is famous for + noun, so + S + V","It is famous for its food, so many people visit."]],
+i:["Name and where it is:","What is it famous for?","One example (place or activity):"]},
+{t:"Place",q:"Do you like your hometown?",
+m:[["A","Yes, I do. I like my hometown because it is peaceful and the people are friendly."],["R","Also, the food is cheap and delicious, so I always enjoy going back."],["E","One thing I do not like is that the roads are crowded at rush hour."]],
+v:[["peaceful","word","yên bình","My hometown is peaceful."],["friendly neighbours","collocation","hàng xóm thân thiện","I have friendly neighbours."],["cost of living","collocation","chi phí sinh hoạt","The cost of living is low there."],["rush hour","collocation","giờ cao điểm","The roads are crowded at rush hour."],["home sweet home","idiom","nhà là nơi tuyệt nhất","After a long trip, it is home sweet home."]],
+s:[["Yes, I do. I like + noun + because + S + be + adjective","Yes, I do. I like my town because it is quiet."],["One thing I do not like is that + S + V","One thing I do not like is that it is very hot."]],
+i:["Yes or no? Your short answer:","One good thing:","One thing you do not like:"]},
+{t:"Place",q:"Has your hometown changed much?",
+m:[["A","Yes, it has changed a lot in the last ten years."],["R","There are many new buildings and shopping centres, so it is more modern now."],["E","For example, there was only a small market near my house before, but now there is a big supermarket."]],
+v:[["change a lot","phrase","thay đổi nhiều","The city has changed a lot."],["develop quickly","collocation","phát triển nhanh","My town has developed quickly."],["shopping centre","collocation","trung tâm mua sắm","There is a new shopping centre near my house."],["used to + V","phrase","từng (trong quá khứ)","There used to be a small market here."],["a far cry from","idiom","khác xa","It is a far cry from the quiet village it used to be."]],
+s:[["S + has/have + changed + a lot","My town has changed a lot."],["There was + noun before, but now there is + noun","There was a small shop before, but now there is a supermarket."]],
+i:["Yes or no? How much?","One new thing:","Before and now (example):"]},
+{t:"Life",q:"What do people do for fun in your hometown?",
+m:[["A","Most people like eating out and walking by the river in the evening."],["R","It is cheap and relaxing, so families can do it together."],["E","For example, on weekends my family often goes to a cafe near the river."]],
+v:[["eat out","phrase","ăn ngoài","We often eat out on Sundays."],["hang out with friends","phrase","đi chơi với bạn","I hang out with friends after class."],["relaxing","word","thư giãn","A walk by the river is relaxing."],["spend time with family","collocation","dành thời gian cho gia đình","I spend time with my family at the weekend."],["the more the merrier","idiom","càng đông càng vui","We invite everyone because the more the merrier."]],
+s:[["Most people like + V-ing","Most people like walking by the river."],["It is + adjective, so + S + V","It is cheap, so families can go together."]],
+i:["What do people like doing?","Why is it popular?","Your own example:"]},
+{t:"Life",q:"Would you like to live in your hometown in the future?",
+m:[["A","Yes, I would. I want to live there when I am older because my family is there."],["R","Life is slower and calmer than in a big city."],["E","However, I may move to Ho Chi Minh City first to find a good job."]],
+v:[["settle down","phrase","ổn định cuộc sống","I want to settle down in my hometown."],["slow pace of life","collocation","nhịp sống chậm","I like the slow pace of life there."],["job opportunities","collocation","cơ hội việc làm","There are more job opportunities in big cities."],["move to + place","phrase","chuyển đến","I may move to Hanoi for work."],["put down roots","idiom","an cư, gắn bó lâu dài","I want to put down roots near my family."]],
+s:[["Yes, I would. I want to + V + because + S + V","Yes, I would. I want to live there because my family is there."],["I may + V + first to + V","I may move to a big city first to find a job."]],
+i:["Yes or no? Your short answer:","Why? (family, life, cost)","Any plan before that:"]}
+],"Hometown");
+var F=tag([
+{t:"Hobbies",q:"What do you do in your free time?",
+m:[["A","In my free time, I usually listen to music and watch films."],["R","I do this because it helps me relax after a busy day at university."],["E","For example, on Friday evenings I watch a film with my brother."]],
+v:[["in my free time","phrase","trong thời gian rảnh","In my free time, I read novels."],["unwind","word","thư giãn","I listen to music to unwind."],["binge-watch","phrase","xem liền một mạch","I sometimes binge-watch series."],["spend time + V-ing","collocation","dành thời gian làm gì","I spend time reading novels."],["kill time","idiom","giết thời gian","I scroll my phone to kill time."]],
+s:[["In my free time, I usually + V","In my free time, I usually read books."],["I do this because it helps me + V","I do this because it helps me relax."]],
+i:["Your main free-time activity:","Why do you like it?","When or with whom (example):"]},
+{t:"Hobbies",q:"Do you prefer indoor or outdoor activities?",
+m:[["A","I prefer outdoor activities because I need fresh air after studying."],["R","Sitting in class all day makes me tired, but a walk or a game of badminton makes me feel awake."],["E","For example, I play badminton in the park with friends every Sunday morning."]],
+v:[["fresh air","collocation","không khí trong lành","I need some fresh air after class."],["stay indoors","phrase","ở trong nhà","When it rains, I stay indoors."],["do sports","collocation","chơi thể thao","I do sports at the weekend."],["get some exercise","collocation","tập thể dục","A short walk helps me get some exercise."],["couch potato","idiom","người lười, ngồi suốt","I do not want to be a couch potato."]],
+s:[["I prefer + noun + because + S + V","I prefer outdoor activities because I need fresh air."],["X makes me + adjective, but Y makes me + adjective","Class makes me tired, but a walk makes me feel awake."]],
+i:["Indoor or outdoor? Your answer:","One reason:","One example:"]},
+{t:"Hobbies",q:"Did you have a hobby when you were a child?",
+m:[["A","Yes, I did. When I was a child, I loved drawing."],["R","I drew every day after school because it was fun and my mother bought me colour pencils."],["E","Now I do not draw much, but sometimes I draw for fun when I feel stressed."]],
+v:[["when I was a child","phrase","khi tôi còn nhỏ","When I was a child, I lived in the countryside."],["take up a hobby","collocation","bắt đầu một sở thích","I took up drawing at the age of seven."],["for fun","phrase","cho vui","I draw for fun."],["grow out of","phrase","không còn thích khi lớn lên","I grew out of that hobby."],["my cup of tea","idiom","thứ tôi thích","Drawing was my cup of tea."]],
+s:[["When I was a child, I + V (past)","When I was a child, I loved drawing."],["Now I do not + V much, but sometimes I + V","Now I do not draw much, but sometimes I draw for fun."]],
+i:["Yes or no? Your hobby then:","Why did you like it?","Do you still do it now?"]},
+{t:"Weekend",q:"How do you usually spend your weekends?",
+m:[["A","I usually spend my weekends with my family and friends."],["R","During the week I am busy, so weekends are my time to rest."],["E","For example, on Saturday I sleep late and go for coffee, and on Sunday I help my mother cook."]],
+v:[["spend time with","collocation","dành thời gian với","I spend time with my cousins."],["sleep in","phrase","ngủ nướng","I sleep in on Saturdays."],["catch up with friends","phrase","gặp gỡ trò chuyện với bạn","I catch up with friends at a cafe."],["do housework","collocation","làm việc nhà","I do housework on Sunday."],["recharge my batteries","idiom","nạp lại năng lượng","I recharge my batteries at the weekend."]],
+s:[["I usually spend + noun + with + noun","I usually spend my weekends with family."],["During the week + S + V, so + S + V","During the week I am busy, so weekends are my time to rest."]],
+i:["Your usual weekend:","Why is it important to you?","One example (Saturday or Sunday):"]},
+{t:"Weekend",q:"What hobby would you like to try in the future?",
+m:[["A","I would like to learn the guitar in the future."],["R","I love music, but I cannot play any instrument yet."],["E","I plan to take an online course next summer, so I can practise at home every evening."]],
+v:[["would like to + V","phrase","muốn làm gì","I would like to learn the guitar."],["take a course","collocation","tham gia khóa học","I plan to take an online course."],["play an instrument","collocation","chơi nhạc cụ","I cannot play an instrument yet."],["practise every day","collocation","luyện tập mỗi ngày","I will practise every day."],["give it a go","idiom","thử xem","I want to give it a go."]],
+s:[["I would like to + V in the future","I would like to learn the guitar in the future."],["I love + noun, but I cannot + V yet","I love music, but I cannot play an instrument yet."]],
+i:["Which hobby?","Why do you want to try it?","Your plan (when and how):"]}
+],"Free time");
+var ALL={"Education":D,"Hometown":H,"Free time":F};
+var AQ=D.concat(H,F);
+var cur="Education";
 var root=$("#list");
-D.forEach(function(d,n){
+function render(name){root.textContent="";ALL[name].forEach(function(d,n){
  var det=el("details","qc"),sm=el("summary"),bd=el("div","qb");
  if(n===0)det.open=true;
  sm.append(el("b","",(n+1)+". "+d.q),el("span","tag",d.t));
@@ -160,14 +223,16 @@ D.forEach(function(d,n){
  bd.appendChild(tb(["Structure","Example"],d.s));
  bd.appendChild(el("h3","","4. Plan your ideas"));
  bd.appendChild(el("p","note","Write key words only. Do not write full sentences. Then speak to your partner for 30 seconds."));
- d.i.forEach(function(p,j){var lb=el("label");lb.append(p);var inp=el("input");inp.type="text";var k="sp"+n+"_"+j;try{var v=localStorage.getItem(k);if(v)inp.value=v}catch(e){}inp.addEventListener("input",function(){try{localStorage.setItem(k,inp.value)}catch(e){}});lb.appendChild(inp);bd.appendChild(lb)});
+ d.i.forEach(function(p,j){var lb=el("label");lb.append(p);var inp=el("input");inp.type="text";var k=(name==="Education"?"":name.replace(/\W/g,"")+"_")+"sp"+n+"_"+j;try{var v=localStorage.getItem(k);if(v)inp.value=v}catch(e){}inp.addEventListener("input",function(){try{localStorage.setItem(k,inp.value)}catch(e){}});lb.appendChild(inp);bd.appendChild(lb)});
  var b=el("button","pri","Start 30 seconds"),o=el("b");o.style.marginLeft=".6rem";timer(b,o,30);
- bd.append(b,o);det.append(sm,bd);root.appendChild(det)});
+ bd.append(b,o);det.append(sm,bd);root.appendChild(det)});$("#ttl").textContent="IELTS Speaking Part 1: "+name;document.title="IELTS Speaking Part 1: "+name}
+var tp=$("#topics");Object.keys(ALL).forEach(function(nm){var b=el("button","",nm);b.setAttribute("aria-pressed",nm===cur);b.onclick=function(){cur=nm;[].forEach.call(tp.children,function(x){x.setAttribute("aria-pressed",x===b)});render(nm)};tp.appendChild(b)});
+render(cur);
 $("#oa").onclick=function(){[].forEach.call(document.querySelectorAll(".qc"),function(x){x.open=true})};
 $("#ca").onclick=function(){[].forEach.call(document.querySelectorAll(".qc"),function(x){x.open=false})};
 
 var last="";
-$("#dq").onclick=function(){var t=$("#tp").value,p=D.filter(function(q){return t==="All"||q.t===t}),i;do{i=Math.floor(Math.random()*p.length)}while(p.length>1&&p[i].q===last);last=p[i].q;$("#qq").textContent=last;$("#tt").textContent=""};
+$("#dq").onclick=function(){var t=$("#tp").value,p=AQ.filter(function(q){return t==="All"||q.c===t}),i;do{i=Math.floor(Math.random()*p.length)}while(p.length>1&&p[i].q===last);last=p[i].q;$("#qq").textContent=last;$("#tt").textContent=""};
 timer($("#tm"),$("#tt"),25);
 })();
 </script>
