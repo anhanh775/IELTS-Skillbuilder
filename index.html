@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>IELTS Skill Builder (4.5+)</title>
+<title>IELTS Skill Builder (4.0+)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.11.0/dist/tabler-icons.min.css">
 <style>
@@ -20,18 +20,26 @@ main{max-width:1040px;margin:0 auto;padding:2.2rem 1.2rem 4rem}
 .ey{margin:0 0 .6rem;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--br)}
 h1{margin:0 0 1.8rem;font:700 clamp(1.9rem,6vw,2.6rem)/1.1 Inter,system-ui,sans-serif;letter-spacing:-.025em}
 .grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.8rem}
-.t{--c:var(--mu);display:flex;flex-direction:column;gap:.4rem;min-height:9.6rem;padding:1rem;border:1px solid var(--ln);border-radius:12px;background:var(--cd);color:inherit;text-decoration:none}
+.t{--c:var(--mu);position:relative;display:flex;flex-direction:column;gap:.4rem;min-height:9.6rem;padding:1rem;border:1px solid var(--ln);border-radius:12px;background:var(--cd)}
 .t.lr{--c:var(--lr)}.t.wr{--c:var(--wr)}.t.sp{--c:var(--sp)}
 .sk{display:flex;align-items:center;gap:.45rem;font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--mu)}
 .sk i{width:.5rem;height:.5rem;border-radius:50%;background:var(--c);display:inline-block}
 .n{margin-top:.1rem;font-size:1.9rem;font-weight:700;letter-spacing:-.03em;line-height:1.1}
 .nm{font-size:.85rem;font-weight:500;line-height:1.4}
-.ft{margin-top:auto;display:flex;align-items:center;justify-content:space-between;font-size:.78rem;font-weight:600;color:var(--mu)}
+.nm a{color:inherit;text-decoration:none}
+.nm a::after{content:"";position:absolute;inset:0;border-radius:12px}
+.ex{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.2rem}
+.chip{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .65rem;border:1px solid var(--c);border-radius:99px;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--c);text-decoration:none;background:var(--cd)}
+.chip:hover{background:var(--c);color:var(--cd)}
+.chip:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+.chip .ti{font-size:.95rem}
+.ft{margin-top:auto;display:flex;align-items:center;justify-content:space-between;font-size:.78rem;font-weight:600;color:var(--mu);padding-top:.3rem}
 .ft .ti{font-size:1rem}
-a.t{border-color:var(--ln2)}
-a.t .ft{color:var(--c)}
-a.t:hover{border-color:var(--c)}
-a.t:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+.t.ok{border-color:var(--ln2)}
+.t.ok .ft{color:var(--c)}
+.t.ok:hover,.t.ok:focus-within{border-color:var(--c)}
+.nm a:focus-visible{outline:none}
+.t.ok:has(.nm a:focus-visible){outline:3px solid var(--c);outline-offset:2px}
 .t.soon .n{color:var(--ln2)}
 .t.soon.named .n{opacity:.4;color:var(--ink)}
 .t.soon:not(.named){background:transparent;border-style:dashed}
@@ -39,37 +47,46 @@ a.t:focus-visible{outline:3px solid var(--c);outline-offset:2px}
 </style>
 </head>
 <body>
-<header class="bar"><div><span class="lg"><i class="ti ti-school" aria-hidden="true"></i></span><span class="bn">IELTS Skill Builder</span><span class="bd">4.5+</span></div></header>
+<header class="bar"><div><span class="lg"><i class="ti ti-school" aria-hidden="true"></i></span><span class="bn">IELTS Skill Builder</span><span class="bd">4.0+</span></div></header>
 <main>
 <p class="ey">30-session programme</p>
-<h1>IELTS Skill Builder (4.5+)</h1>
+<h1>IELTS Skill Builder (4.0+)</h1>
 <ol class="grid" id="grid"></ol>
 <noscript><p>Please turn on JavaScript to see the sessions.</p></noscript>
 </main>
 <script>
 // To add a session: put its page in session-NN/index.html, then set href and title here.
 // skill: lr = listening/reading, wr = writing, sp = speaking (sets the colour and label).
+// extras: small buttons inside the tile, e.g. {label:"Game",href:"session-03/game/",icon:"device-gamepad-2"}.
 // An entry with no href is shown as “Coming soon”.
 (function(){
 var K={lr:"Listening & Reading",wr:"Writing",sp:"Speaking"};
 var S=[
  {title:"IELTS Short Listening & Reading Practice",skill:"lr"},
  {title:"IELTS Short Writing Practice",skill:"wr",href:"session-02/"},
- {title:"IELTS Short Speaking Practice",skill:"sp",href:"session-03/"}
+ {title:"IELTS Short Speaking Practice",skill:"sp",href:"session-03/",extras:[{label:"Game",href:"session-03/game/",icon:"device-gamepad-2"}]}
 ];
+function icon(name){var i=document.createElement("i");i.className="ti ti-"+name;i.setAttribute("aria-hidden","true");return i}
 var g=document.getElementById("grid");
 for(var i=0;i<30;i++){
- var s=S[i]||{},li=document.createElement("li"),a=document.createElement(s.href?"a":"div");
- a.className="t"+(s.skill?" "+s.skill:"")+(s.href?"":" soon")+(s.title?" named":"");
- if(s.href)a.href=s.href;
+ var s=S[i]||{},li=document.createElement("li"),a=document.createElement("div");
+ a.className="t"+(s.skill?" "+s.skill:"")+(s.href?" ok":" soon")+(s.title?" named":"");
  var sk=document.createElement("div");sk.className="sk";
- if(s.skill){var d=document.createElement("i");sk.appendChild(d);sk.appendChild(document.createTextNode(K[s.skill]))}else{sk.textContent="Session"}
+ if(s.skill){sk.appendChild(document.createElement("i"));sk.appendChild(document.createTextNode(K[s.skill]))}else{sk.textContent="Session"}
  var n=document.createElement("div");n.className="n";n.textContent=String(i+1).padStart(2,"0");
- var nm=document.createElement("div");nm.className="nm";nm.textContent=s.title||"To be announced";
+ var nm=document.createElement("div");nm.className="nm";
+ var title=s.title||"To be announced";
+ if(s.href){var l=document.createElement("a");l.href=s.href;l.textContent=title;nm.appendChild(l)}else{nm.textContent=title}
+ a.append(sk,n,nm);
+ if(s.extras&&s.extras.length){
+  var ex=document.createElement("div");ex.className="ex";
+  s.extras.forEach(function(e){var c=document.createElement("a");c.className="chip";c.href=e.href;if(e.icon)c.appendChild(icon(e.icon));c.appendChild(document.createTextNode(e.label));ex.appendChild(c)});
+  a.appendChild(ex);
+ }
  var ft=document.createElement("div");ft.className="ft";
  var lb=document.createElement("span");lb.textContent=s.href?"Open session":"Coming soon";ft.appendChild(lb);
- if(s.href){var ar=document.createElement("i");ar.className="ti ti-arrow-right";ar.setAttribute("aria-hidden","true");ft.appendChild(ar)}
- a.append(sk,n,nm,ft);li.appendChild(a);g.appendChild(li);
+ if(s.href)ft.appendChild(icon("arrow-right"));
+ a.appendChild(ft);li.appendChild(a);g.appendChild(li);
 }
 })();
 </script>

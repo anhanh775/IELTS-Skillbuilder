@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guess the IELTS Speaking band</title>
+<style>
+:root{--bg:#f6f4ef;--sf:#fff;--tx:#1d2a33;--mu:#5e6b74;--ln:#d9d6cc;--ac:#1f5f8b;--ok:#2d7a4f;--no:#b3423a;--hl:#fff3c4;--bd:#e8f0f6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#14191d;--sf:#1e262c;--tx:#e8edf0;--mu:#9aa7b0;--ln:#34404a;--ac:#6fb1e0;--ok:#6fcf97;--no:#f08a82;--hl:#4a4020;--bd:#22303b}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#14191d;--sf:#1e262c;--tx:#e8edf0;--mu:#9aa7b0;--ln:#34404a;--ac:#6fb1e0;--ok:#6fcf97;--no:#f08a82;--hl:#4a4020;--bd:#22303b}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:var(--bg);color:var(--tx);font-family:"Be Vietnam Pro","Segoe UI",system-ui,sans-serif;line-height:1.55}
+.app{max-width:900px;margin:0 auto;padding:16px 18px 90px}
+.top{display:flex;justify-content:space-between;align-items:center;color:var(--mu);font-size:14px;margin-bottom:14px}
+.bar{height:5px;background:var(--ln);border-radius:3px;margin-bottom:22px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ac);transition:width .3s}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.15;margin:.3em 0}
+h2{font-size:clamp(20px,3.5vw,26px);margin:0 0 .6em}
+.lead{font-size:18px;color:var(--mu);max-width:60ch}
+.qn{font-size:15px;color:var(--mu);margin:0 0 6px;font-weight:600}
+.q{font-size:clamp(24px,4.6vw,36px);font-weight:700;line-height:1.3;color:var(--tx);background:var(--bd);border:2px solid var(--ac);border-radius:10px;padding:16px 20px;margin:0 0 18px}
+.ans{background:var(--sf);border-left:5px solid var(--ac);border-radius:6px;padding:22px 24px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(20px,3.4vw,28px);line-height:1.6}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+button{font:inherit;cursor:pointer;border:1.5px solid var(--ln);background:var(--sf);color:var(--tx);border-radius:8px;padding:10px 16px;min-width:48px}
+button:hover{border-color:var(--ac)}
+button:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+button.pri{background:var(--ac);border-color:var(--ac);color:#fff;font-weight:600}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) button.pri{color:#10171c}}
+.band{font-size:20px;font-weight:700;min-width:58px}
+.band.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.band.no{border-color:var(--no);color:var(--no)}
+.band.real{border-color:var(--ok);box-shadow:0 0 0 3px var(--ok)}
+.res{background:var(--bd);border-radius:8px;padding:18px 20px;margin-top:8px}
+.verdict{font-weight:700;font-size:20px;margin:0 0 6px}
+.verdict.ok{color:var(--ok)}.verdict.no{color:var(--no)}
+.crit{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:12px}
+.crit div{background:var(--sf);border-radius:6px;padding:10px 12px;font-size:15px}
+.crit b{display:block;margin-bottom:2px}
+mark{background:var(--hl);color:inherit;padding:0 2px;border-radius:2px}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px;background:var(--sf)}
+th,td{border:1px solid var(--ln);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bd)}
+.nav{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--ln);padding:10px 18px calc(10px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;gap:10px}
+.nav button{flex:0 0 auto}
+.hint{color:var(--mu);font-size:14px}
+#tm{position:fixed;right:10px;bottom:calc(66px + env(safe-area-inset-bottom,0px));z-index:5;font-size:12px;display:flex;flex-direction:column-reverse;align-items:flex-end;gap:4px}
+#tm button{padding:3px 9px;min-width:0;font-size:12px;border-radius:6px}
+#tm button.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.tmp{background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:8px;max-height:50vh;overflow:auto}
+.tmt{display:flex;gap:4px;align-items:center;margin-bottom:4px}
+#tm input,#tm select{width:auto;margin:0;padding:3px 4px;font-size:12px;border-radius:5px}
+#tm input{width:78px}
+.tmsc{min-width:20px;text-align:right}
+.tmok{color:var(--ok);font-weight:700}
+.tms{margin:4px 0 0;color:var(--mu)}
+.tmr{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.res{padding:12px 16px}
+.res .verdict{font-size:18px;margin-bottom:2px}
+.res .crit{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
+.res .crit div{font-size:13px;line-height:1.45;padding:8px 10px}
+@media (max-width:800px){.res .crit{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.top{flex-wrap:wrap;gap:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--sf);border:1px solid var(--ln);border-radius:20px;padding:3px 12px;color:var(--tx)}
+select,input{font:inherit;width:100%;padding:8px 10px;margin-top:4px;border-radius:6px;border:1.5px solid var(--ln);background:var(--sf);color:var(--tx)}
+.crit button{margin-top:6px;width:100%}
+ul{padding-left:20px}
+.homebar{max-width:900px;margin:0 auto;padding:12px 18px 0;display:flex;gap:16px;font-size:14px}
+.homebar a{color:var(--ac);text-decoration:none;font-weight:600}
+.homebar a:hover{text-decoration:underline}
+.homebar a:focus-visible{outline:3px solid var(--ac);outline-offset:2px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="homebar"><a href="../">← Session 3</a><a href="../../">All sessions</a></div>
+<div class="app" id="app"></div>
+<div id="tm"></div>
+<div class="nav"><button id="prev">Back</button><span class="hint" id="hint" style="align-self:center"></span><button id="next" class="pri">Next</button></div>
+<script>
+const Q="What do you usually do in your free time?";
+const D={
+1:{t:"Free time... uh... TV. Yes. TV.",
+ f:"Gần như không nói được thành câu, im lặng và ngập ngừng rất lâu.",v:"Chỉ vài từ rời rạc (free time, TV, yes).",g:"Không có câu hoàn chỉnh, không có động từ hay chủ ngữ.",c:"Gần như không trả lời được câu hỏi, chỉ lặp lại từ.",
+ k:["uh...","TV. Yes. TV."]},
+2:{t:"I... sleep. And TV. I like. Tired... work.",
+ f:"Nói từng cụm từ ngắt quãng, nghỉ rất nhiều giữa các từ.",v:"Rất ít từ, chỉ là từ đơn: sleep, TV, tired, work.",g:"Câu thiếu thành phần (“I like.”), không dùng được thì hay từ nối.",c:"Có ý rời rạc nhưng không nối thành lời giải thích.",
+ k:["I... sleep","And TV","I like."]},
+3:{t:"I... watch TV. And phone. It is fun. I not have many time.",
+ f:"Ngập ngừng liên tục, câu cực ngắn.",v:"Rất cơ bản: watch TV, phone, fun.",g:"Thiếu động từ (“And phone”), sai phủ định (“I not have”), sai “many time”.",c:"Không giải thích, không phát triển ý.",
+ k:["I not have","many time","And phone"]},
+4:{t:"In my free time, I usually watch movie at home. Sometime I go out with my friend. I like it because it is relax.",
+ f:"Nói được liền hơn nhưng còn ngắt quãng.",v:"Đơn giản, lặp lại.",g:"Thiếu số nhiều (“movie”), “Sometime”, nhầm từ loại (“it is relax”).",c:"Trả lời đúng câu hỏi, lý do rất sơ sài.",
+ k:["movie","Sometime","it is relax"]},
+5:{t:"Well, I usually spend my free time watching movies or hanging out with friends. I like it because it helps me feel relaxed after a long day at work. But sometimes I’m too tired, so I just stay at home.",
+ f:"Khá đều, thỉnh thoảng chậm lại.",v:"Đủ dùng: hang out, feel relaxed.",g:"Có câu phức với because, but, so; ít lỗi.",c:"Có lý do và một ý đối lập đơn giản.",
+ k:["hanging out","because","so I just stay"]},
+6:{t:"Most of the time I just watch series on Netflix, especially at weekends, because it’s a good way to unwind after a busy week. Occasionally I meet up with friends for coffee, which is nice because we can catch up. I’d like to do more exercise, though, but I never seem to find the time.",
+ f:"Liền mạch, nói dài mà không bị đứt.",v:"Có từ ít phổ biến: unwind, catch up, occasionally.",g:"Có mệnh đề quan hệ (“which is nice”); còn hơi rườm (“though, but”).",c:"Mở rộng ý tự nhiên, thêm mong muốn cá nhân.",
+ k:["unwind","catch up","which is nice"]},
+7:{t:"To be honest, I’m quite a homebody, so I tend to spend my downtime binge-watching crime dramas or reading. I find it’s the best way to recharge after a hectic week. That said, I try to catch up with friends over coffee every now and then, just so I don’t become completely isolated.",
+ f:"Trôi chảy, dùng từ nối tự nhiên (To be honest, That said).",v:"Idiom và collocation: homebody, recharge, hectic, every now and then.",g:"Đa dạng và chính xác.",c:"Tự mô tả tính cách, có đối lập và mục đích rõ.",
+ k:["homebody","recharge","That said","every now and then"]},
+8:{t:"I’d say it varies depending on how drained I am. When work has been particularly gruelling, I’ll curl up with a novel or a documentary, but if I’ve got energy to spare, I like to explore new cafés around the city with friends. Lately I’ve also been trying to pick up badminton, which has been a nice change of pace from sitting at a desk all week.",
+ f:"Tự nhiên, ngắt nghỉ có chủ đích.",v:"Chính xác và linh hoạt: drained, gruelling, curl up, change of pace.",g:"Cấu trúc phức (when / if / which), thì hiện tại hoàn thành tiếp diễn, hầu như không lỗi.",c:"Có chiều sâu: ý thay đổi theo điều kiện, có điều mới gần đây.",
+ k:["drained","gruelling","curl up","pick up","change of pace"]},
+9:{t:"Honestly, it depends on my mood, but I’m a firm believer in protecting my downtime. On quieter weeks I’ll happily lose myself in a good book, whereas when I’m feeling restless, I’ll drag a friend out to some hole-in-the-wall café I’ve been meaning to try. Funnily enough, I’ve recently got into cycling along the riverbank at dawn, which has turned out to be oddly addictive. It’s become the highlight of my week.",
+ f:"Rất tự nhiên, nhịp điệu và giọng điệu linh hoạt như người bản xứ.",v:"Idiom đúng ngữ cảnh: firm believer, hole-in-the-wall, lose myself in, got into.",g:"Gần như hoàn hảo, nhiều cấu trúc tương phản (whereas, which has turned out).",c:"Kể chuyện có cá tính, kết lại gọn và có sức nặng.",
+ k:["firm believer","lose myself in","hole-in-the-wall","got into","Funnily enough"]}
+};
+const order=[5,3,8,2,6,4,9,1,7];
+const slides=["intro",...order,"sum"];
+let i=0,score=0,picked={},st={};
+function hl(b){let t=D[b].t;D[b].k.forEach(k=>{t=t.replace(k,"<mark>"+k+"</mark>")});return t}
+function render(){
+ const s=slides[i],a=document.getElementById("app");
+ document.getElementById("prev").disabled=i==0;
+ document.getElementById("next").style.visibility=i==slides.length-1?"hidden":"visible";
+ const bar='<div class="bar"><i style="width:'+(i/(slides.length-1)*100)+'%"></i></div>';
+ const top='<div class="top"><span>Slide '+(i+1)+' of '+slides.length+'</span><span>Correct guesses: '+score+'/'+Object.keys(picked).length+'</span></div>';
+ let h="";
+ if(s=="intro"){
+  h='<h1>Guess the IELTS Speaking band</h1><p class="lead">One question, nine answers. Read each answer, guess the band (1 to 9), then see what makes them different.</p><p class="qn">Today’s question</p><p class="q">'+Q+'</p><h2>How to play</h2><ul><li>Read the answer together. Talk about it for 1 minute.</li><li>Pick the band you think it is.</li><li>Check the answer and the 4 criteria: fluency, vocabulary, grammar, content.</li></ul><button class="pri" onclick="go(1)">Start</button>';
+ }else if(s=="sum"){
+  h='<h1>Compare bands 1 to 9</h1><p class="lead">You guessed <b>'+score+'</b> out of <b>'+Object.keys(picked).length+'</b> answers.</p><div class="wrap"><table><tr><th>Band</th><th>Fluency</th><th>Vocabulary</th><th>Grammar</th><th>Content</th></tr>'+
+  Object.keys(D).map(b=>'<tr><td><b>'+b+'</b></td><td>'+D[b].f+'</td><td>'+D[b].v+'</td><td>'+D[b].g+'</td><td>'+D[b].c+'</td></tr>').join("")+'</table></div><h2 style="margin-top:22px">Key points</h2><ul><li>Bands 1 to 2: single words, long pauses, almost no real communication.</li><li>Bands 3 to 4: short sentences, basic mistakes, little explanation.</li><li>Bands 5 to 6: clear ideas, linking words, some less common words.</li><li>Band 7 and above: natural idioms, accurate complex sentences, deeper ideas and personality.</li></ul><button onclick="reset()">Play again</button>';
+ }else{
+  const d=D[s],p=picked[s],done=p!==undefined,n=order.indexOf(s)+1;
+  h='<p class="qn">Question '+n+' of '+order.length+'</p><p class="q">'+Q+'</p><div class="ans">'+(done?hl(s):d.t)+'</div><p class="hint">'+(done?"The yellow parts are typical signs of this band.":"Which band is this?")+'</p><div class="btns">'+
+  [1,2,3,4,5,6,7,8,9].map(b=>{let c="band";if(done){if(b==s)c+=" real";if(b==p)c+=b==s?" ok":" no"}return '<button class="'+c+'" '+(done?"disabled":"")+' onclick="pick('+s+','+b+')">'+b+'</button>'}).join("")+'</div>';
+  if(done){h+='<div class="res"><p class="verdict '+(p==s?"ok":"no")+'">'+(p==s?"Correct! This is band "+s:"Not quite. This is band "+s+" (you chose "+p+")")+'</p><div class="crit"><div><b>Fluency</b>'+d.f+'</div><div><b>Vocabulary</b>'+d.v+'</div><div><b>Grammar</b>'+d.g+'</div><div><b>Content</b>'+d.c+'</div></div></div>'}
+ }
+ a.innerHTML=top+bar+h;
+ document.getElementById("hint").textContent="Use the ← → keys to change slides";renderTm();
+ scrollTo(0,0);
+}
+function pick(s,b){if(picked[s]!==undefined)return;picked[s]=b;if(b==s)score++;const y=scrollY;render();scrollTo(0,y)}
+function go(n){i=Math.max(0,Math.min(slides.length-1,i+n));render()}
+let T=[],tg={},aw={};
+function esc(x){return String(x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function tot(t){return Object.keys(aw).reduce((a,s)=>a+(aw[s][t]?1:0),0)}
+function setT(n){T=[];for(let k=0;k<n;k++)T.push("Team "+(k+1));tg={};aw={};renderTm()}
+function nm(t,v){T[t]=v.trim()||("Team "+(t+1))}
+function setG(s,t,v){tg[s]=tg[s]||{};tg[s][t]=+v}
+function award(s,t){aw[s]=aw[s]||{};aw[s][t]=!aw[s][t];renderTm()}
+let tmOpen=false;
+function tmToggle(){tmOpen=!tmOpen;renderTm()}
+function renderTm(){const el=document.getElementById("tm"),s=slides[i],q=typeof s=="number";let h='<button onclick="tmToggle()" aria-expanded="'+tmOpen+'">Teams'+(T.length?' ('+T.length+')':'')+'</button>';if(tmOpen){h+='<div class="tmp">';if(!T.length){h+='<div class="tms">Number of teams</div><div class="tmr">'+[2,3,4,5,6,7,8].map(n=>'<button onclick="setT('+n+')">'+n+'</button>').join("")+'</div>'}else{h+=T.map((n,t)=>{const g=(tg[s]||{})[t],a=(aw[s]||{})[t],ok=q&&picked[s]!==undefined&&g==s;return '<div class="tmt"><input value="'+esc(n)+'" onchange="nm('+t+',this.value)" aria-label="Team name">'+(q?'<select aria-label="Guess" onchange="setG('+s+','+t+',this.value)"><option value="">-</option>'+[1,2,3,4,5,6,7,8,9].map(b=>'<option value="'+b+'"'+(g==b?' selected':'')+'>'+b+'</option>').join("")+'</select>'+(ok?'<span class="tmok">✓</span>':'')+'<button class="'+(a?'on':'')+'" onclick="award('+s+','+t+')">+1</button>':'')+'<b class="tmsc">'+tot(t)+'</b></div>'}).join("");h+='<div class="tms"><button onclick="setT(0)">Reset teams</button></div>'}h+='</div>'}el.innerHTML=h}
+function reset(){picked={};score=0;i=0;tg={};aw={};render()}
+document.getElementById("prev").onclick=()=>go(-1);
+document.getElementById("next").onclick=()=>go(1);
+addEventListener("keydown",e=>{if(/INPUT|SELECT/.test(e.target.tagName))return;if(e.key=="ArrowRight")go(1);if(e.key=="ArrowLeft")go(-1)});
+render();
+</script>
+</body>
+</html>
