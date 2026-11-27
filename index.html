@@ -12,7 +12,7 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:500 1rem/1.6 "Plus Jakarta Sans",system-ui,sans-serif}
 main{max-width:1000px;margin:0 auto;padding:1.5rem 1rem 4rem}
-.hero{display:flex;align-items:center;gap:1rem;padding:1.5rem;border-radius:24px;background:linear-gradient(135deg,#2563eb,#4338ca);color:#fff;box-shadow:0 10px 24px rgba(37,99,235,.28);margin-bottom:1.4rem}
+.hero{display:flex;align-items:center;gap:1rem;padding:1.5rem;border-radius:24px;background:#2563eb;color:#fff;box-shadow:0 8px 20px rgba(37,99,235,.22);margin-bottom:1.4rem}
 .hi{flex:none;width:3.6rem;height:3.6rem;border-radius:18px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:1.9rem}
 h1{font:800 clamp(1.6rem,5.5vw,2.5rem)/1.15 "Plus Jakarta Sans",system-ui,sans-serif;letter-spacing:-.01em;margin:0}
 .hs{margin:.3rem 0 0;color:rgba(255,255,255,.88);font-size:.95rem}
@@ -43,6 +43,7 @@ a.t:focus-visible{outline:3px solid var(--c);outline-offset:3px}
 // To add a session: put its page in session-NN/index.html, then set href and title here.
 // skill: lr = listening/reading, wr = writing, sp = speaking (sets colour and icon).
 // An entry with no href is shown as “Coming soon”.
+(function(){
 var ICON={lr:"headphones",wr:"pencil",sp:"microphone"};
 var S=[
  {title:"IELTS Short Listening & Reading Practice",skill:"lr"},
@@ -54,13 +55,14 @@ for(var i=0;i<30;i++){
  var s=S[i]||{},li=document.createElement("li"),a=document.createElement(s.href?"a":"div");
  a.className="t"+(s.skill?" "+s.skill:"")+(s.href?"":" soon")+(s.title?" named":"");
  if(s.href)a.href=s.href;
- var top=document.createElement("div");top.className="top";
- var n=document.createElement("span");n.className="n";n.textContent=String(i+1).padStart(2,"0");top.appendChild(n);
- if(s.skill){var ic=document.createElement("span");ic.className="ic";ic.innerHTML='<i class="ti ti-'+ICON[s.skill]+'" aria-hidden="true"></i>';top.appendChild(ic)}
+ var hd=document.createElement("div");hd.className="top";
+ var n=document.createElement("span");n.className="n";n.textContent=String(i+1).padStart(2,"0");hd.appendChild(n);
+ if(s.skill){var ic=document.createElement("span");ic.className="ic";ic.innerHTML='<i class="ti ti-'+ICON[s.skill]+'" aria-hidden="true"></i>';hd.appendChild(ic)}
  var nm=document.createElement("span");nm.className="nm";nm.textContent=s.title||"Session "+(i+1);
  var pl=document.createElement("span");pl.className="pl";pl.textContent=s.href?"Start now":"Coming soon";
- a.append(top,nm,pl);li.appendChild(a);g.appendChild(li);
+ a.append(hd,nm,pl);li.appendChild(a);g.appendChild(li);
 }
+})();
 </script>
 </body>
 </html>
